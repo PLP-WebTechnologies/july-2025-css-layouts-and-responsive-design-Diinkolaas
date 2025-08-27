@@ -1,0 +1,117 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation - Flexbox */
+.nav-bar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-bar a:hover {
+    text-decoration: underline;
+}
+
+/* Grid Layout for Main Content + Sidebar */
+.grid-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Main content:Sidebar ratio */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Content Section */
+.content {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Sidebar Section */
+.sidebar {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border: 2px solid #00acc1;
+    border-radius: 5px;
+}
+
+/* Cards inside Content - Flexbox */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.card {
+    flex: 1 1 calc(50% - 15px); /* Two cards per row */
+    background-color: #ffe0b2;
+    padding: 15px;
+    border: 2px solid #ffb74d;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Responsive Design - Media Queries */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 2fr 1fr;
+    }
+    .card {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack content and sidebar */
+    }
+    .cards {
+        flex-direction: column;
+    }
+    .card {
+        flex: 1 1 100%;
+    }
+    .nav-bar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
